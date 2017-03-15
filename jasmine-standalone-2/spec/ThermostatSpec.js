@@ -20,7 +20,7 @@ describe('Thermostat', function() {
   })
 
   it('has a minimum temperature of 10 degrees', function() {
-    for(var i = 1; i <= thermostat.MINIMUM_TEMPERATURE; i ++) {
+    for(var i = 1; i <= 10; i ++) {
       thermostat.down();
     };
     expect(function() {thermostat.down()}).toThrow('Cannot go below minimum temperature');
@@ -30,6 +30,15 @@ describe('Thermostat', function() {
 
   it('expect power saving mode to be on as default', function() {
     expect(thermostat.POWER_MODE).toEqual(true);
+  })
+
+  it('has a maximum temp of 25 degree when power mode is on', function() {
+    for(var i = 1; i <= 5; i ++) {
+      thermostat.up();
+    };
+    expect(function() {thermostat.up()}).toThrow('Cannot go above maximum temperature');
+
+    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE_ON);
   })
 
 })
