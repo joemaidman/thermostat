@@ -13,12 +13,12 @@ describe('Thermostat', function() {
 
   it('can increase the temperature with an up function', function() {
     thermostat.up();
-    expect(thermostat.temperature).toEqual(thermostat.DEFAULT_TEMPERATURE + 1);
+    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.DEFAULT_TEMPERATURE + 1);
   })
 
   it('can decrease the temperature with a down function', function() {
     thermostat.down();
-    expect(thermostat.temperature).toEqual(thermostat.DEFAULT_TEMPERATURE - 1);
+    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.DEFAULT_TEMPERATURE - 1);
   })
 
   it('has a minimum temperature of 10 degrees', function() {
@@ -27,11 +27,11 @@ describe('Thermostat', function() {
     };
     expect(function() {thermostat.down()}).toThrow('Cannot go below minimum temperature');
 
-    expect(thermostat.temperature).toEqual(thermostat.MINIMUM_TEMPERATURE);
+    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.MINIMUM_TEMPERATURE);
   })
 
   it('expect power saving mode to be on as default', function() {
-    expect(thermostat.POWER_MODE).toEqual(true);
+    expect(thermostat.isPowerSavingModeOn()).toEqual(true);
   })
 
   it('has a maximum temp of 25 degree when power mode is on', function() {
@@ -43,8 +43,13 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE);
   })
 
+  it('can set power saving mode to off', function(){
+    thermostat.setPowerSavingMode(false);
+    expect(thermostat.isPowerSavingModeOn()).toEqual(false)
+  })
+
   it('has a maximum temp of 32 degree when power mode is off', function() {
-    thermostat.setPowerMode(false);
+    thermostat.setPowerSavingMode(false);
     for(var i = 1; i <= 12; i ++) {
       thermostat.up();
     };

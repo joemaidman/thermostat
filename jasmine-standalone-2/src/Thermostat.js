@@ -8,6 +8,10 @@ function Thermostat() {
   this.temperature = this.DEFAULT_TEMPERATURE;
 }
 
+Thermostat.prototype.isPowerSavingModeOn = function () {
+  return this.POWER_MODE;
+}
+
 Thermostat.prototype.up = function() {
   if(this.temperature >= this.MAXIMUM_TEMPERATURE) {
     throw 'Cannot go above maximum temperature';
@@ -23,7 +27,7 @@ Thermostat.prototype.down = function() {
 
 }
 
-Thermostat.prototype.setPowerMode = function(setting) {
+Thermostat.prototype.setPowerSavingMode = function(setting) {
   this.POWER_MODE = setting;
   this.MAXIMUM_TEMPERATURE = this.POWER_MODE ? 25 : 32;
 }
@@ -45,4 +49,8 @@ Thermostat.prototype.energyUsage = function() {
       return 'high-usage';
       break;
   }
+}
+
+Thermostat.prototype.getCurrentTemperature = function() {
+  return this.temperature;
 }
