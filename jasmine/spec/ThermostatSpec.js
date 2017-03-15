@@ -8,7 +8,7 @@ describe('Thermostat', function() {
   });
 
   it('has a default temperature of 20 degrees', function() {
-    expect(thermostat.temperature).toEqual(thermostat.DEFAULT_TEMPERATURE);
+    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.DEFAULT_TEMPERATURE);
   });
 
   it('can increase the temperature with an up function', function() {
@@ -40,22 +40,22 @@ describe('Thermostat', function() {
     };
     expect(function() {thermostat.up()}).toThrow('Cannot go above maximum temperature');
 
-    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE);
+    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.MAXIMUM_TEMPERATURE);
   })
 
   it('can set power saving mode to off', function(){
-    thermostat.setPowerSavingMode(false);
+    thermostat.setPowerSavingModeOff();
     expect(thermostat.isPowerSavingModeOn()).toEqual(false)
   })
 
   it('has a maximum temp of 32 degree when power mode is off', function() {
-    thermostat.setPowerSavingMode(false);
+    thermostat.setPowerSavingModeOff();
     for(var i = 1; i <= 12; i ++) {
       thermostat.up();
     };
     expect(function() {thermostat.up()}).toThrow('Cannot go above maximum temperature');
 
-    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE);
+    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.MAXIMUM_TEMPERATURE);
   })
 
   it('can be reset to default temperature', function() {
