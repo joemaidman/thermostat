@@ -29,3 +29,18 @@ Thermostat.prototype.setPowerMode = function(setting) {
 Thermostat.prototype.resetTemp = function() {
   this.temperature = this.DEFAULT_TEMPERATURE;
 }
+
+Thermostat.prototype.energyUsage = function() {
+  var check = this.temperature;
+  switch(true) {
+    case(check < 18):
+      return 'low-usage';
+      break;
+    case(check < 25):
+      return 'medium-usage';
+      break;
+    default:
+      return 'high-usage';
+      break;
+  }
+}
