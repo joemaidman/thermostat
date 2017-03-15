@@ -25,3 +25,7 @@ Thermostat.prototype.setPowerMode = function(setting) {
   this.POWER_MODE = setting;
   this.MAXIMUM_TEMPERATURE = this.POWER_MODE ? 25 : 32;
 }
+
+Thermostat.prototype.resetTemp = function() {
+  this.temperature = this.DEFAULT_TEMPERATURE;
+}
