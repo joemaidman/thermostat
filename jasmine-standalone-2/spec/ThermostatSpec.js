@@ -38,7 +38,17 @@ describe('Thermostat', function() {
     };
     expect(function() {thermostat.up()}).toThrow('Cannot go above maximum temperature');
 
-    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE_ON);
+    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE);
+  })
+
+  it('has a maximum temp of 32 degree when power mode is off', function() {
+    thermostat.setPowerMode(false);
+    for(var i = 1; i <= 12; i ++) {
+      thermostat.up();
+    };
+    expect(function() {thermostat.up()}).toThrow('Cannot go above maximum temperature');
+
+    expect(thermostat.temperature).toEqual(thermostat.MAXIMUM_TEMPERATURE);
   })
 
 })
