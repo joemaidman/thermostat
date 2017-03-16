@@ -4,16 +4,26 @@
 $( document ).ready(function() {
   thermostat = new Thermostat();
   displayTemp();
-  http://api.openweathermap.org/data/2.5/weather?q=
-  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=7ee15802e5e3d8abeb518e24540bd2cd').done(function(data){
-    console.log(data);
-  });
+  getOutsideTemp('London');
 });
+
+function getOutsideTemp(city){
+  var url = 'http://api.openweathermap.org/data/2.5/weather?q='
+  var units = '&units=metric'
+  var appid = '&APPID=' + config.APPID
+  var tempObj = $.get(url+city+units+appid).done(function(data){
+    $('#outsideTemp').text(data.main.temp);
+  });
+}
 
 function psmToogle(){
   thermostat.isPowerSavingModeOn() ? thermostat.setPowerSavingModeOff() : thermostat.setPowerSavingModeOn();
   thermostat.isPowerSavingModeOn() ? $('#psm-btn').css('background-color', 'green') : $('#psm-btn').css('background-color', 'red');
 };
+
+$('#select-city').change(function(){
+  getOutsideTemp($(this).val());
+})
 
 $("#resetTemp").click(function(){
   thermostat.resetTemp();
