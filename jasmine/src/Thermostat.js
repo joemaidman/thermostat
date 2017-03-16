@@ -31,13 +31,11 @@ Thermostat.prototype.down = function() {
 
 Thermostat.prototype.setPowerSavingModeOff = function() {
   this.POWER_MODE = false;
-  console.log(this.POWER_MODE);
   this._setMaxTemp();
 }
 
 Thermostat.prototype.setPowerSavingModeOn = function(){
   this.POWER_MODE = true;
-  console.log(this.POWER_MODE);
   this._setMaxTemp();
 }
 

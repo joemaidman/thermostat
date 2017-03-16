@@ -2,8 +2,31 @@
 
 var thermostat = new Thermostat();
 
-function psmOn(){
-  thermostat.setPowerSavingModeOn();
-  var psmOnBtn = document.getElementById('psmOn');
-  if (thermostat.isPowerSavingModeOn()) {psmOnBtn.disabled = true;}
+$( document ).ready(function() {
+  displayTemp();
+});
+
+function psmToogle(){
+  thermostat.isPowerSavingModeOn() ? thermostat.setPowerSavingModeOff() : thermostat.setPowerSavingModeOn();
+  thermostat.isPowerSavingModeOn() ? $('#psm-btn').css('background-color', 'green') : $('#psm-btn').css('background-color', 'red');
 };
+
+$("#resetTemp").click(function(){
+  thermostat.resetTemp();
+  displayTemp();
+});
+
+$("#upTemp").click(function(){
+  thermostat.up();
+  displayTemp();
+});
+
+$("#downTemp").click(function(){
+  thermostat.down();
+  displayTemp();
+});
+
+
+function displayTemp(){
+  $('#currentTemp').text(thermostat.getCurrentTemperature())
+}
