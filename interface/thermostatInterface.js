@@ -1,8 +1,8 @@
 'use strict';
-
-var thermostat = new Thermostat();
+  var thermostat;
 
 $( document ).ready(function() {
+  thermostat = new Thermostat();
   displayTemp();
 });
 
@@ -29,4 +29,5 @@ $("#downTemp").click(function(){
 
 function displayTemp(){
   $('#currentTemp').text(thermostat.getCurrentTemperature())
+  
 }
