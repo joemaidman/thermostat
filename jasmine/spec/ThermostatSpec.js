@@ -40,7 +40,7 @@ describe('Thermostat', function() {
     };
     expect(function() {thermostat.up()}).toThrow('Cannot go above maximum temperature');
 
-    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.MAXIMUM_TEMPERATURE);
+    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.currentMaxTemp);
   })
 
   it('can set power saving mode to off', function(){
@@ -55,7 +55,7 @@ describe('Thermostat', function() {
     };
     expect(function() {thermostat.up()}).toThrow('Cannot go above maximum temperature');
 
-    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.MAXIMUM_TEMPERATURE);
+    expect(thermostat.getCurrentTemperature()).toEqual(thermostat.currentMaxTemp);
   })
 
   it('can be reset to default temperature', function() {
