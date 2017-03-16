@@ -4,6 +4,10 @@
 $( document ).ready(function() {
   thermostat = new Thermostat();
   displayTemp();
+  http://api.openweathermap.org/data/2.5/weather?q=
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=7ee15802e5e3d8abeb518e24540bd2cd').done(function(data){
+    console.log(data);
+  });
 });
 
 function psmToogle(){
