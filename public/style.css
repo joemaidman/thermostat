@@ -4,3 +4,24 @@
   height: 20px;
   width: 20px;
 }
+
+ .energyUsageLow{
+   background-color: green;
+   border-radius: 10px;
+   height: 20px;
+   width: 20px;
+ }
+
+ .energyUsageMedium{
+   background-color: orange;
+   border-radius: 10px;
+   height: 20px;
+   width: 20px;
+ }
+
+ .energyUsageHigh{
+   background-color: red;
+   border-radius: 10px;
+   height: 20px;
+   width: 20px;
+ }
