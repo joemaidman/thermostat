@@ -28,6 +28,11 @@ $("#downTemp").click(function(){
 
 
 function displayTemp(){
-  $('#currentTemp').text(thermostat.getCurrentTemperature())
-  
+  $('#currentTemp').text(thermostat.getCurrentTemperature());
+  changeClass();
+}
+
+function changeClass(){
+  $('#energyUsage').removeClass();
+  $('#energyUsage').addClass(thermostat.energyUsage());
 }
