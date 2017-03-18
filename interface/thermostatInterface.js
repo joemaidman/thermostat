@@ -4,17 +4,23 @@ var thermostat;
 // Document ready
 $( document ).ready(function() {
   thermostat = new Thermostat();
-  displayTemp();
+  updateTemperature();
   getOutsideTemp('London');
+  $("#toggle").click();
 });
 
 //Functions
 function getOutsideTemp(city){
-  var url = 'http://api.openweathermap.org/data/2.5/weather?q='
-  var units = '&units=metric'
-  var appid = '&APPID=' + config.APPID
-  var tempObj = $.get(url+city+units+appid).done(function(data){
-    $('#outsideTemp').text(data.main.temp);
+  var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+  var units = '&units=metric';
+  var appid = '&APPID=' + config.APPID;
+  var responseCall = $.get(url+city+units+appid).done(function(data){
+    moveNeedle(data.main.temp);
+    $("#windSpeed").text(data.wind.speed + " mph");
+    $("#humidity").text(data.main.humidity + "%");
+    var forecast = data.weather[0].description;
+    var forecastOutput = "' " + forecast[0].toUpperCase() + forecast.slice(1) + " '" ;
+    $("#weatherReport").text(forecastOutput);
   });
 }
 
@@ -38,22 +44,45 @@ function calcAngle(){
   return Math.round(angle,0);
 }
 
+function updateTemperature() {
+  $("#currentTemp").text(thermostat.getCurrentTemperature());
+  $("#outer").attr('class', thermostat.energyUsage());
+}
+
+function moveNeedle(tempIn){
+  var temp = Math.round(tempIn) - 20;
+  var angle = temp * 4.5;
+  $('.needle').css({
+    'transition': 'transform 2s',
+    '-webkit-transform': 'rotate('+angle+'deg)'
+  })
+}
+
 // Callbacks
-$('#select-city').change(function(){
-  getOutsideTemp($(this).val());
+$("#toggle").on("click", function(){
+  if (thermostat.isPowerSavingModeOn() === true){
+    thermostat.setPowerSavingModeOff();
+  } else {
+    thermostat.setPowerSavingModeOn();
+  };
+  updateTemperature();
+});
+
+$("#up").on("click", function() {
+  thermostat.up();
+  updateTemperature();
+});
+
+$("#down").on("click", function() {
+  thermostat.down();
+  updateTemperature();
 })
 
-$("#resetTemp").click(function(){
+$("#reset").on("click", function() {
   thermostat.resetTemp();
-  displayTemp();
-});
+  updateTemperature();
+})
 
-$("#upTemp").click(function(){
-  thermostat.up();
-  displayTemp();
-});
-
-$("#downTemp").click(function(){
-  thermostat.down();
-  displayTemp();
-});
+$("#select-city").on("change", function(){
+  getOutsideTemp($('#select-city').val());
+})

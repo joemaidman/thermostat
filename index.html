@@ -1,87 +1,86 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Thermostat</title>
-  <link rel="stylesheet" type="text/css" href="public/style.css">
-  <script src="jasmine/src/Thermostat.js"></script>
-  <script src="interface/jquery-3.1.1.min.js"></script>
-  <script src="config.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-</head>
-<body>
-</br>
-</br>
-</br>
-<h1>Thermostat</h1>
-<div id="weather">
-  Today's temperature: <span id="outside-temp"</span>
-</div>
-</br>
-<div class="therm-border">
-  <div class="therm-outer">
-    <div class="bottom"> </div>
-    <div class="middle"> </div>
-      <div class="top"> </div>
-    <div class="therm-inner-border">
-      <div class="therm-inner">
-        <div class="therm-middle">
-          <div class="medium-usage" id="energyUsage">
-            <h2 class="therm-temp-label">
-            </h2>
-          </div>
-          <span class="needle">
-          </span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  </div>
-</br>
-</br>
-  <div id= "outerborder">
-      <div id="outer" class="medium">
-        <div id= "innerborder">
-          <div id="inner">
-            <div id="currentTemp">
-            </div>
-              <button class="down" id="down"><img src="public/down.png"></button>
-                <button class="up" id="up"><img src="public/up.png"/>  </button>
-                <label class="switch">
-                    <input id="toggle" type="checkbox">
-                    <div class="slider round"></div>
+   <head>
+      <meta charset="utf-8">
+      <title>Thermostat</title>
+      <link rel="stylesheet" type="text/css" href="public/style.css">
+      <script src="jasmine/src/Thermostat.js"></script>
+      <script src="interface/jquery-3.1.1.min.js"></script>
+      <script src="config.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+   </head>
+   <body>
+      <h1>Thermostat</h1>
+      <div id= "outerborder">
+         <div id="outer" class="medium">
+            <div id= "innerborder">
+               <div id="inner">
+                  <button type="button" id="reset"><img src="public/reset.png"></button>
+                  <div id="currentTemp">
+                  </div>
+                  <button class="down" id="down"><img src="public/down.png"></button>
+                  <button class="up" id="up"><img src="public/up.png"/>  </button>
+                  <label class="switch">
+                     <input id="toggle" type="checkbox">
+                     <div class="slider round"></div>
                   </label>
-                    <button type="button" id="reset"><img src="public/reset.png"></button>
-                <!-- Rounded switch -->
-          </div>
-        </div>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-
-  <div style="display:in-line;"><h2>Current Temperature:<span id="currentTemp"></span></h2></div>
-  <div style="display:in-line;"><h2>Energy Usage:<button class="low-usage" ></button></h2></div>
-  <div style="display:in-line;"><h2>Outside Temperature:<span id="outsideTemp"></span></h2></div>
-
-  <select id="select-city">
-    <option value="London">London</option>
-    <option value="NewYork">New York</option>
-    <option value="Tokyo">Tokyo</option>
-    <option value="NewDelhi">New Delhi</option>
-    <option value="Berlin">Berlin</option>
-    <option value="Rome">Rome</option>
-    <option value="Toronto">Toronto</option>
-    <option value="Istanbul">Istanbul</option>
-    <option value="Paris">Paris</option>
-  </select>
-
-  <h2 class="PSM">Power Saving Mode: <button id="psm-btn"></button></h2><br>
-  <button onClick="psmToogle();" type="button" id="tooglePSM">Toogle PSM</button>
-
-  <button type="button" id="resetTemp">Reset Temperature</button>
-  <button type="button" id="upTemp">Increase Temperature</button>
-  <button type="button" id="downTemp">Decrease Temperature</button>
-
-  <script src="interface/thermostatInterface.js"></script>
-</body>
+      <center>
+         <h2>Weather report</h2>
+      </center>
+      <select class="select-style " id="select-city">
+         <option value="Berlin">Berlin</option>
+         <option value="Istanbul">Istanbul</option>
+         <option value="London">London</option>
+         <option value="NewDelhi">New Delhi</option>
+         <option value="NewYork">New York</option>
+         <option value="Paris">Paris</option>
+         <option value="Rome">Rome</option>
+         <option value="Tokyo">Tokyo</option>
+         <option value="Toronto">Toronto</option>
+      </select>
+      </br>
+      <center>
+      <h3 id="weatherReport"></h3>
+      </center>
+      <center>
+        <p id="outsideTemp">Outside temperature</p>
+      </center>
+      <div class="therm-border">
+         <div class="therm-outer">
+           <div class="minusTen"> </div>
+            <div class="bottom"> </div>
+             <div class="plusTen"> </div>
+            <div class="middle"> </div>
+             <div class="plusThirty"></div>
+              <div class="minusTwenty"></div>
+            <div class="top"></div>
+             <div class="plusFifty"></div>
+            <div class="therm-inner-border">
+               <div class="therm-inner">
+                  <div class="therm-middle">
+                     <div class="medium-usage" >
+                     </div>
+                     <span class="needle">
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <br>
+      <br>
+      <center>
+      <img src="public/wind.png"/>
+      <h3 id="windSpeed"></h3>
+      </center>
+      <center>
+      <img src="public/humidity.png"/>
+      <h3 id="humidity"></h3>
+      </center>
+      <script src="interface/thermostatInterface.js"></script>
+   </body>
 </html>
