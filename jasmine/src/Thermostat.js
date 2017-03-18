@@ -18,14 +18,14 @@ Thermostat.prototype.up = function() {
   if(this.temperature >= this.currentMaxTemp) {
     throw 'Cannot go above maximum temperature';
   };
-  this.temperature += 1;
+  this.temperature++;
 }
 
 Thermostat.prototype.down = function() {
   if(this.temperature <= this.MINIMUM_TEMPERATURE) {
     throw 'Cannot go below minimum temperature';
   };
-    this.temperature -= 1;
+    this.temperature--;
 
 }
 

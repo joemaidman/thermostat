@@ -7,13 +7,60 @@
   <script src="jasmine/src/Thermostat.js"></script>
   <script src="interface/jquery-3.1.1.min.js"></script>
   <script src="config.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
-
 <body>
+</br>
+</br>
+</br>
+<h1>Thermostat</h1>
+<div id="weather">
+  Today's temperature: <span id="outside-temp"</span>
+</div>
+</br>
+<div class="therm-border">
+  <div class="therm-outer">
+    <div class="bottom"> </div>
+    <div class="middle"> </div>
+      <div class="top"> </div>
+    <div class="therm-inner-border">
+      <div class="therm-inner">
+        <div class="therm-middle">
+          <div class="medium-usage" id="energyUsage">
+            <h2 class="therm-temp-label">
+            </h2>
+          </div>
+          <span class="needle">
+          </span>
+        </div>
+      </div>
 
-  <h1>Thermostat</h1>
+    </div>
+  </div>
+  </div>
+</br>
+</br>
+  <div id= "outerborder">
+      <div id="outer" class="medium">
+        <div id= "innerborder">
+          <div id="inner">
+            <div id="currentTemp">
+            </div>
+              <button class="down" id="down"><img src="public/down.png"></button>
+                <button class="up" id="up"><img src="public/up.png"/>  </button>
+                <label class="switch">
+                    <input id="toggle" type="checkbox">
+                    <div class="slider round"></div>
+                  </label>
+                    <button type="button" id="reset"><img src="public/reset.png"></button>
+                <!-- Rounded switch -->
+          </div>
+        </div>
+      </div>
+    </div>
+
   <div style="display:in-line;"><h2>Current Temperature:<span id="currentTemp"></span></h2></div>
-  <div style="display:in-line;"><h2>Energy Usage:<button class="low-usage" id="energyUsage"></button></h2></div>
+  <div style="display:in-line;"><h2>Energy Usage:<button class="low-usage" ></button></h2></div>
   <div style="display:in-line;"><h2>Outside Temperature:<span id="outsideTemp"></span></h2></div>
 
   <select id="select-city">

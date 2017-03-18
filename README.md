@@ -1,22 +1,51 @@
-## Thermostat
+### Thermostat
 
-### Specifications
+## User Stories
+```
+As a thermostat
+So that I can start at a sensible temperature
+I want to start at 20 degrees
 
- - Thermostat starts at 20 degrees
- - You can increase the temperature with an up function
- - You can decrease the temperature with a down function
- - The minimum temperature is 10 degrees
- - If power saving mode is on, the maximum temperature is 25 degrees
- - If power saving mode is off, the maximum temperature is 32 degrees
- - Power saving mode is on by default
- - You can reset the temperature to 20 with a reset function
- - You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25 is medium-usage, anything else is high-usage.
- - (In the challenges where we add an interface, low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.)
+As a user
+So that I don't get too cold
+I want to increase temp with an up function
+
+As a user
+So that I don't get too warm
+I want to decrease temp with an down function
+
+As a thermostat
+So that it doesn't get too cold
+The temp can't be set below 10 degrees
+
+As a user
+So that I can reset the temperature
+I want to reset the thermostat
+
+As a thermostat
+When power saving mode is on
+The max temp is 25 degrees
+
+As a thermostat
+When power saving mode is off
+The max temp is 32 degrees
+
+As a thermostat
+So that I can save power
+Power saving mode will be on by default
+
+As a user
+So that I can know the current energy usage
+I want to ask the thermostat for the current energy usage
+```
 
 ### Technologies
  - JavaScript
  - Jasmine
+ - jQuery
+ - CSS
 
 ### Contributors
  - Ashwini Mani
  - Clem Capel-Bird
+ - Christos
