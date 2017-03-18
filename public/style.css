@@ -129,7 +129,7 @@ h3 {
     position: relative;
     display: inline-block;
     width: 100px;
-    height: 45px;
+    height: 40px;
     left: 30%;
     margin-top: 20%;
 }
@@ -157,8 +157,8 @@ h3 {
     height: 40px;
     width: 45px;
     left: 4px;
-    bottom: 2px;
-    background-image: url('../public/turbine.png');
+    bottom: 0px;
+    background-image: url('../public/leaf.png');
     background-repeat: no-repeat;
     background-position: center;
     -webkit-transition: .4s;
@@ -182,6 +182,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 .select-style {
+    outline: none;
     font-size: 25px;
     color: #fdda16;
     border-width: 2px;
@@ -392,6 +393,17 @@ input:checked + .slider:before {
     padding-top: 0px;
     margin-top: -18px;
 }
+.thermEnd {
+    position: absolute;
+    bottom: 12%;
+    height: 7%;
+    width: 1%;
+    right: 29%;
+    z-index: 6;
+    border: solid red 3px;
+    background-color: red ;
+    transform: rotate(150deg);
+}
 .therm-border {
     position: relative;
     background: black;
@@ -459,7 +471,7 @@ input:checked + .slider:before {
 .medium-usage {
     z-index: 2;
     position: relative;
-    background: green;
+    background: red;
     border-radius: 50%;
     top: 40%;
     left: 40%;
