@@ -68,16 +68,16 @@ describe('Thermostat', function() {
 
     it('is at low when temperature is below 18 degrees', function(){
       thermostat.temperature = 17;
-      expect(thermostat.energyUsage()).toEqual('low-usage');
+      expect(thermostat.energyUsage()).toEqual('low');
     });
 
     it('is at medium when temperature is below 25 and above 17 degrees', function(){
-      expect(thermostat.energyUsage()).toEqual('medium-usage');
+      expect(thermostat.energyUsage()).toEqual('medium');
     });
 
     it('is at high when temperature is above or equal to 25 degrees', function(){
       thermostat.temperature = 25;
-      expect(thermostat.energyUsage()).toEqual('high-usage');
+      expect(thermostat.energyUsage()).toEqual('high');
     });
 
   });
