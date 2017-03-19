@@ -1,4 +1,6 @@
-### Thermostat
+Thermostat
+======
+Thermostat is a browser based web application built using javascript, jQuery and CSS to emulate the behaviour of a thermostat. It also makes use of the <a href="https://openweathermap.org/">OpenWeatherMap</a> API to display current weather conditions for a given location. A demo of the application can be found at https://thermostat.netlify.com
 
 ## User Stories
 ```
@@ -38,14 +40,34 @@ As a user
 So that I can know the current energy usage
 I want to ask the thermostat for the current energy usage
 ```
+##Screenshot
+![thermostat](https://github.com/joemaidman/thermostat-final/blob/master/screenshots/homepage.png)
 
-### Technologies
- - JavaScript
- - Jasmine
- - jQuery
- - CSS
+## Technologies used
+- Jasmine (testing)
+- HTML
+- JavaScript
+- jQuery
+- CSS
 
-### Contributors
+## Installation
+- Clone the repo
+- `cd` to the project folder
+
+To test:
+- `cd` to the jasmine folder
+- Run `open SpecRunner.html`
+
+To run the application on localhost:
+- Run `open index.html`
+
+##Potential feature improvements
+* Save application state to a server.
+* Additional locations.
+* Additional weather information.
+
+##Contributors
  - Ashwini Mani
  - Clem Capel-Bird
- - Christos
+ - Christos Paraskeva
+ - Katie Koschland

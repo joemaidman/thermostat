@@ -4,9 +4,19 @@ var thermostat;
 // Document ready
 $( document ).ready(function() {
   thermostat = new Thermostat();
+  $("#toggle").click();
   updateTemperature();
   getOutsideTemp('London');
-  $("#toggle").click();
+
+  $("#toggle").on("click", function(){
+    if (thermostat.isPowerSavingModeOn() === true){
+      thermostat.setPowerSavingModeOff();
+    } else {
+      thermostat.setPowerSavingModeOn();
+    };
+    updateTemperature();
+  });
+
 });
 
 //Functions
@@ -39,11 +49,6 @@ function changeClass(){
   $('#energyUsage').addClass(thermostat.energyUsage());
 }
 
-function calcAngle(){
-  var angle = (((thermostat.getCurrentTemperature() -10) / 180) * 100);
-  return Math.round(angle,0);
-}
-
 function updateTemperature() {
   $("#currentTemp").text(thermostat.getCurrentTemperature());
   $("#outer").attr('class', thermostat.energyUsage());
@@ -59,15 +64,6 @@ function moveNeedle(tempIn){
 }
 
 // Callbacks
-$("#toggle").on("click", function(){
-  if (thermostat.isPowerSavingModeOn() === true){
-    thermostat.setPowerSavingModeOff();
-  } else {
-    thermostat.setPowerSavingModeOn();
-  };
-  updateTemperature();
-});
-
 $("#up").on("click", function() {
   thermostat.up();
   updateTemperature();
