@@ -1,6 +1,6 @@
 Thermostat
 ======
-Thermostat is a browser based web application built using javascript, jQuery and CSS to emulate the behaviour of a thermostat. It also makes use of the <a href="https://openweathermap.org/">OpenWeatherMap</a> API to display current weather conditions for a given location. A demo of the application can be found at https://thermostat.netlify.com
+Thermostat is a browser based web application built using javascript, jQuery and CSS to emulate the behaviour of a thermostat. It also makes use of the <a href="https://openweathermap.org/">OpenWeatherMap</a> API to display current weather conditions for a given location. A demo of the application can be found at http://thermostat.netlify.com
 
 ## User Stories
 ```
