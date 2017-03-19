@@ -52,7 +52,10 @@ I want to ask the thermostat for the current energy usage
 
 ## Installation
 - Clone the repo
-- `cd` to the project folder
+- Create a `config.js` file in the project folder containing your openweathermap API key in the following format:
+`var config = {
+  APPID: 'my-api-key'
+}`
 
 ## Testing
 - `cd` to the jasmine folder
