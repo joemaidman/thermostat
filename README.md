@@ -2,6 +2,8 @@ Thermostat
 ======
 Thermostat is a browser based web application built using javascript, jQuery and CSS to emulate the behaviour of a thermostat. It also makes use of the <a href="https://openweathermap.org/">OpenWeatherMap</a> API to display current weather conditions for a given location. A demo of the application can be found at http://thermostat.netlify.com
 
+![thermostat](https://github.com/joemaidman/thermostat-final/blob/master/screenshots/thermostat.png)
+
 ## User Stories
 ```
 As a thermostat
@@ -40,7 +42,7 @@ As a user
 So that I can know the current energy usage
 I want to ask the thermostat for the current energy usage
 ```
-## Screenshot
+## Screenshots
 ![thermostat](https://github.com/joemaidman/thermostat-final/blob/master/screenshots/homepage.png)
 
 ## Technologies used
