@@ -63,8 +63,8 @@ I want to ask the thermostat for the current energy usage
 
 ## Potential feature improvements
 * Save application state to a server.
-* Additional locations.
-* Additional weather information.
+* Provide additional location options.
+* Display additional weather information.
 
 ## Contributors
  - Ashwini Mani
