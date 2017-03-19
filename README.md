@@ -40,7 +40,7 @@ As a user
 So that I can know the current energy usage
 I want to ask the thermostat for the current energy usage
 ```
-##Screenshot
+## Screenshot
 ![thermostat](https://github.com/joemaidman/thermostat-final/blob/master/screenshots/homepage.png)
 
 ## Technologies used
@@ -54,19 +54,19 @@ I want to ask the thermostat for the current energy usage
 - Clone the repo
 - `cd` to the project folder
 
-To test:
+## Testing
 - `cd` to the jasmine folder
 - Run `open SpecRunner.html`
 
-To run the application on localhost:
+## Running
 - Run `open index.html`
 
-##Potential feature improvements
+## Potential feature improvements
 * Save application state to a server.
 * Additional locations.
 * Additional weather information.
 
-##Contributors
+## Contributors
  - Ashwini Mani
  - Clem Capel-Bird
  - Christos Paraskeva
